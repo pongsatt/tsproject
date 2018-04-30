@@ -6,12 +6,18 @@
     "start-ts": "ts-node src/index.ts",
     "start-ts:watch": "nodemon --watch src --exec ts-node src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "gen": "graphql-schema-typescript generate-ts src/schemas.graphql --output src/schemas.d.ts",
+    "gen:watch": "nodemon --watch src/schemas.graphql --exec npm run gen"
   },
   "license": "MIT",
   "devDependencies": {
+    "@pongsatt/graphql-schema-typescript": "^1.0.25",
     "nodemon": "^1.17.3",
     "ts-node": "^6.0.1",
     "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.13.1"
   }
 }

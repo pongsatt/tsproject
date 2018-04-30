@@ -1,0 +1,22 @@
+scalar Date
+
+type Product {
+    id: String!
+    name: String!
+    description: String
+    createdDate: Date!
+}
+
+input ProductInput {
+    name: String!
+    description: String
+}
+
+type Query {
+    product(id: String): Product
+    products: [Product]
+}
+
+type Mutation {
+    addProduct(product: ProductInput!): [Product]
+}
